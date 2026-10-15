@@ -1,0 +1,122 @@
+[
+  {
+    "chunk_id": "pet_life_stage_kitten",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "幼猫阶段规则",
+    "chunk_type": "domain_rule",
+    "decision_dimensions": ["pet_age_stage", "life_stage", "hard_constraint"],
+    "keywords": ["幼猫", "奶糕", "成长发育", "DHA", "高品质配方", "成猫粮"],
+    "content": "幼猫处于成长发育阶段，主推荐应优先匹配幼猫或明确覆盖幼猫阶段的产品；如果用户明确说幼猫，不应把成猫专用粮作为主推荐。"
+  },
+  {
+    "chunk_id": "pet_life_stage_adult",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "成猫阶段规则",
+    "chunk_type": "domain_rule",
+    "decision_dimensions": ["pet_age_stage", "life_stage", "hard_constraint"],
+    "keywords": ["成猫", "成年猫", "日常主粮", "别推荐幼猫", "奶糕"],
+    "content": "成猫日常主粮应优先选择成猫或全阶段产品；当用户排除幼猫奶糕时，幼猫专用产品应作为硬排除或显著降权。"
+  },
+  {
+    "chunk_id": "pet_digestive_transition",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "肠胃敏感与换粮规则",
+    "chunk_type": "risk_rule",
+    "decision_dimensions": ["digestive_issue", "risk", "transition"],
+    "keywords": ["软便", "玻璃胃", "肠胃敏感", "呕吐", "腹泻", "换粮", "益生元"],
+    "content": "肠胃敏感、软便或呕吐用户应优先选择肠胃支持明确、脂肪和冻干比例不过高的产品；换粮应采用 7-10 天过渡。"
+  },
+  {
+    "chunk_id": "pet_palatability",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "挑食适口性规则",
+    "chunk_type": "decision_rule",
+    "decision_dimensions": ["picky_eater", "palatability"],
+    "keywords": ["挑食", "嘴刁", "不吃", "闻一闻就走", "适口性", "冻干", "猫爱吃"],
+    "content": "当用户强调挑食或适口性时，应提高适口性、香味和冻干卖点的权重，但仍要检查肠胃与过敏风险。"
+  },
+  {
+    "chunk_id": "pet_coat_tear",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "美毛泪痕规则",
+    "chunk_type": "decision_rule",
+    "decision_dimensions": ["priority", "coat_tear_stain", "allergy"],
+    "keywords": ["美毛", "泪痕", "鱼油", "三文鱼", "毛发", "过敏", "鱼肉"],
+    "content": "美毛泪痕需求通常会关注鱼油、动物原料和脂肪酸来源；若用户怀疑鱼类过敏，应避免把含鱼肉或鱼油的产品作为无风险推荐。"
+  },
+  {
+    "chunk_id": "pet_budget_unit_price",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "猫粮预算与参考单价规则",
+    "chunk_type": "pricing_rule",
+    "decision_dimensions": ["budget_range", "unit_price", "value"],
+    "keywords": ["预算", "性价比", "便宜", "大包装", "单价", "元/kg", "多猫家庭"],
+    "content": "猫粮不能只看页面总价，应结合规格换算参考元/kg；多猫家庭可接受大包装，单猫家庭需要考虑储存压力。"
+  },
+  {
+    "chunk_id": "pet_allergy_complexity",
+    "domain": "pet_food",
+    "source": "decision_chunks.json",
+    "title": "过敏与肉源复杂度规则",
+    "chunk_type": "risk_rule",
+    "decision_dimensions": ["allergy", "ingredient_complexity", "hard_constraint"],
+    "keywords": ["过敏", "鱼肉", "鸡肉", "肉源复杂", "排查过敏", "低敏"],
+    "content": "疑似过敏时，推荐应优先考虑肉源简单、成分透明的产品；肉源复杂的商品不适合作为排查过敏时的首选。"
+  },
+  {
+    "chunk_id": "supplement_no_diagnosis",
+    "domain": "supplement",
+    "source": "decision_chunks.json",
+    "title": "保健品非诊疗边界",
+    "chunk_type": "guardrail",
+    "decision_dimensions": ["medical_context", "risk", "response_safety"],
+    "keywords": ["保健品", "治疗", "诊断", "症状", "慢性病", "医生", "专业人士"],
+    "content": "保健品推荐只能作为消费信息整理，不能诊断疾病、承诺疗效或替代医生建议；严重或持续症状应优先就医。"
+  },
+  {
+    "chunk_id": "supplement_medication_risk",
+    "domain": "supplement",
+    "source": "decision_chunks.json",
+    "title": "服药与特殊人群风险",
+    "chunk_type": "guardrail",
+    "decision_dimensions": ["medical_context", "risk", "human_in_loop"],
+    "keywords": ["正在服药", "儿童", "孕期", "慢性病", "不确定", "咨询专业人士"],
+    "content": "孕期、儿童、慢性病或正在服药用户触发高风险边界，系统应提示先咨询专业人士，不能只按热度或价格直接推荐。"
+  },
+  {
+    "chunk_id": "supplement_allergy",
+    "domain": "supplement",
+    "source": "decision_chunks.json",
+    "title": "保健品过敏风险",
+    "chunk_type": "risk_rule",
+    "decision_dimensions": ["allergy", "ingredient", "risk"],
+    "keywords": ["过敏", "鱼油", "乳制品", "麸质", "不确定", "成分"],
+    "content": "鱼油、乳制品来源益生菌、含麸质配方等可能涉及过敏风险；用户不确定过敏时，应优先解释风险并避免强推。"
+  },
+  {
+    "chunk_id": "supplement_duplicate_intake",
+    "domain": "supplement",
+    "source": "decision_chunks.json",
+    "title": "重复补充风险",
+    "chunk_type": "risk_rule",
+    "decision_dimensions": ["dosage", "ingredient", "risk"],
+    "keywords": ["重复补充", "摄入过量", "复合维生素", "钙片", "剂量"],
+    "content": "同类营养素不应盲目叠加，复合维生素、钙片等需要关注重复摄入和剂量边界。"
+  },
+  {
+    "chunk_id": "supplement_budget_daily_cost",
+    "domain": "supplement",
+    "source": "decision_chunks.json",
+    "title": "保健品预算与每日成本",
+    "chunk_type": "pricing_rule",
+    "decision_dimensions": ["budget_range", "unit_price", "value"],
+    "keywords": ["预算", "每日成本", "单价", "100-200元", "200元以上"],
+    "content": "保健品比较时不能只看整瓶价格，应结合规格、用量和每日成本；预算仅用于消费决策，不用于判断疗效。"
+  }
+]

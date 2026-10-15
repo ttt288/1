@@ -1,0 +1,42 @@
+[
+  {
+    "id": "jd_pet_food",
+    "name": "京东猫粮公开排行榜",
+    "domain": "pet_food",
+    "scenario": null,
+    "keywords": ["猫粮", "幼猫", "成猫", "猫主粮", "奶糕"],
+    "url": "https://www.jd.com/phb/key_699402c85b220b9a9f13.html",
+    "heading_keywords": ["京东", "猫粮", "排行榜"],
+    "search_keyword": "猫粮"
+  },
+  {
+    "id": "jd_fish_oil",
+    "name": "京东鱼油热卖榜",
+    "domain": "supplement",
+    "scenario": "fish_oil",
+    "keywords": ["鱼油", "DHA", "EPA", "omega"],
+    "url": "https://pro.m.jd.com/mall/active/4JRfHorUDXgL77E9YdNxSCNMKwkJ/index.html?bbtf=1&currSku=&fromName=null&pageNum=1&preSrc=&queryType=1&rankId=3168484&rankType=10&transparent=1",
+    "heading_keywords": ["鱼油"],
+    "search_keyword": "鱼油 保健品"
+  },
+  {
+    "id": "jd_bluetooth_headphones",
+    "name": "京东蓝牙耳机排行榜",
+    "domain": "general",
+    "scenario": "general_consumer_decision",
+    "keywords": ["耳机", "蓝牙耳机", "降噪耳机", "通勤", "耳麦"],
+    "url": "https://www.jd.com/phb/key_6520cd45da49387ec6d.html",
+    "heading_keywords": ["京东", "耳机", "排行榜"],
+    "search_keyword": "降噪耳机 通勤"
+  },
+  {
+    "id": "jd_hifi_headphones",
+    "name": "京东HiFi耳机排行榜",
+    "domain": "general",
+    "scenario": "general_consumer_decision",
+    "keywords": ["HiFi耳机", "高音质耳机", "有线耳机"],
+    "url": "https://www.jd.com/phb/key_652621ff709162de7dc.html",
+    "heading_keywords": ["京东", "耳机", "排行榜"],
+    "search_keyword": "HiFi耳机"
+  }
+]

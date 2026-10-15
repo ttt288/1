@@ -1,0 +1,108 @@
+[
+  {
+    "case_id": "holdout_pet_soft_stool_budget",
+    "domain": "pet_food",
+    "query": "猫最近有点软便，想找日常能稳一点但别太贵的粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "picky_eater": "有一点",
+      "budget_range": "预算优先",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "ground_truth_product_ids": ["pet_food_001", "pet_food_003", "pet_food_008"],
+    "constraints": {
+      "required_features": {"digestive_support": true},
+      "max_unit_price": 80,
+      "exclude_product_ids": ["pet_food_009", "pet_food_012"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["肠胃稳定", "肠胃友好"],
+    "avoid_product_ids": ["pet_food_009", "pet_food_012"],
+    "risk_keywords": ["换粮", "肠胃"],
+    "quality_scores": {
+      "agent": {"relevance": 4.5, "personalization": 4.3, "explanation": 4.1},
+      "popularity": {"relevance": 3.3, "personalization": 2.9, "explanation": 3.0},
+      "value": {"relevance": 3.8, "personalization": 3.2, "explanation": 3.2}
+    }
+  },
+  {
+    "case_id": "holdout_pet_coat_no_fish_allergy",
+    "domain": "pet_food",
+    "query": "成猫想改善毛发状态，但怀疑鱼肉会过敏",
+    "answers": {
+      "digestive_issue": "基本不会",
+      "picky_eater": "不挑食",
+      "budget_range": "预算不敏感",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "ground_truth_product_ids": ["pet_food_005", "pet_food_012"],
+    "constraints": {
+      "allowed_life_stages": ["成猫", "全阶段"],
+      "forbidden_terms": ["鱼肉"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["美毛泪痕", "成猫"],
+    "avoid_product_ids": ["pet_food_007"],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.0, "personalization": 4.0, "explanation": 4.2},
+      "popularity": {"relevance": 3.1, "personalization": 2.8, "explanation": 3.0},
+      "value": {"relevance": 3.3, "personalization": 2.9, "explanation": 3.0}
+    }
+  },
+  {
+    "case_id": "holdout_supplement_child_medical",
+    "domain": "supplement",
+    "query": "给儿童买基础维生素，孩子在吃药",
+    "answers": {
+      "budget_range": "100-200元",
+      "allergy": "不确定",
+      "explanation_level": "专业详细",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multivitamin",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": ["supplement_004", "supplement_007"],
+    "constraints": {
+      "max_price": 200,
+      "required_features": {"health_goal": "基础营养补充"}
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": ["基础营养补充"],
+    "avoid_product_ids": [],
+    "risk_keywords": ["咨询专业人士"],
+    "quality_scores": {
+      "agent": {"relevance": 4.1, "personalization": 4.0, "explanation": 4.5},
+      "popularity": {"relevance": 3.3, "personalization": 2.8, "explanation": 3.1},
+      "value": {"relevance": 3.4, "personalization": 2.9, "explanation": 3.0}
+    }
+  },
+  {
+    "case_id": "holdout_supplement_lutein_unknown",
+    "domain": "supplement",
+    "query": "看电脑很多，想买叶黄素，但是不确定有没有过敏",
+    "answers": {
+      "medical_context": "没有",
+      "budget_range": "100-200元",
+      "explanation_level": "表格对比",
+      "response_tone": "轻松鼓励"
+    },
+    "expected_scenario": "lutein",
+    "ground_truth_product_ids": ["supplement_003", "supplement_008"],
+    "constraints": {
+      "max_price": 200,
+      "required_features": {"health_goal": "眼部疲劳"}
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": ["眼部疲劳"],
+    "avoid_product_ids": [],
+    "risk_keywords": ["消费信息"],
+    "quality_scores": {
+      "agent": {"relevance": 4.4, "personalization": 4.2, "explanation": 4.0},
+      "popularity": {"relevance": 3.2, "personalization": 2.8, "explanation": 3.0},
+      "value": {"relevance": 3.7, "personalization": 3.0, "explanation": 3.1}
+    }
+  }
+]

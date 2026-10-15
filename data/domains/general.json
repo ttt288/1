@@ -1,0 +1,54 @@
+{
+  "domain": "general",
+  "display_name": "通用品类",
+  "query_keywords": ["推荐", "怎么选", "买什么", "哪个好", "选择", "对比"],
+  "decision_factors": [
+    "category",
+    "core_need",
+    "must_have",
+    "risk",
+    "budget_strategy",
+    "display_preference"
+  ],
+  "sub_scenarios": [
+    {
+      "id": "general_consumer_decision",
+      "name": "通用消费决策",
+      "keywords": ["推荐", "怎么选", "买什么", "哪个好", "选择", "对比"],
+      "focus_dimensions": ["priority", "budget_range", "response_tone"],
+      "ranking_bias": ["requirement_clarity", "risk", "budget_strategy"],
+      "description": "未知品类先进入通用决策框架，不强行套用猫粮或保健品规则。"
+    }
+  ],
+  "question_dimensions": [
+    {
+      "id": "priority",
+      "label": "你最看重哪一点？",
+      "reason": "通用品类下先确认主目标，后续可接入该品类的商品搜索和知识库。",
+      "answer_type": "single_choice",
+      "options": ["性能/效果", "安全稳妥", "使用体验", "性价比"]
+    },
+    {
+      "id": "budget_range",
+      "label": "这次购买更偏向哪种预算策略？",
+      "reason": "未知品类价格口径不稳定，先只区分预算优先还是预算不敏感。",
+      "answer_type": "single_choice",
+      "options": ["预算优先", "预算不敏感"]
+    },
+    {
+      "id": "response_tone",
+      "label": "你希望我用哪种风格解释？",
+      "reason": "这个问题只影响最后表达方式，不参与商品安全和排序判断。",
+      "answer_type": "single_choice",
+      "options": ["温柔可爱", "直接理性", "专业详细", "轻松鼓励"]
+    }
+  ],
+  "risk_rules": [],
+  "ranking_weights": {
+    "suitability": 0.4,
+    "safety": 0.25,
+    "budget_match": 0.2,
+    "popularity": 0.05,
+    "preference_match": 0.1
+  }
+}

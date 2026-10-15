@@ -1,0 +1,99 @@
+{
+  "source_name": "京东猫粮排行榜整理",
+  "source_url": "https://www.jd.com/phb/key_699402c85b220b9a9f13.html",
+  "observed_at": "2026-09-07",
+  "collection_method": "manual_public_toplist_review",
+  "verification_status": "legacy_unverified_product_matches",
+  "notes": [
+    "该文件只记录公开榜单可观察到的排名、标题、品牌和评论量级，不声称实时全网价格。",
+    "2026-09-08 复核发现榜单与本地商品的配方、规格、评论量存在不一致；旧匹配尚未验证，禁止用于当前排名及加分。",
+    "价格、规格和成分仍为本地参考字段，未建立逐 SKU 核验证据。observed_at 是旧文件记录的日期，不代表平台更新时间。",
+    "混合宠物榜单需要过滤非猫干粮商品，不能直接全量导入。"
+  ],
+  "signals": [
+    {
+      "rank": 1,
+      "product_id": "pet_food_005",
+      "brand": "鲜朗",
+      "product_title": "鲜朗猫粮成猫幼猫通用高蛋白全价主粮",
+      "review_count_label": "50万+评价",
+      "popularity_score": 99,
+      "tags": ["京东猫粮排行榜", "高蛋白", "全阶段", "热度高"]
+    },
+    {
+      "rank": 2,
+      "product_id": "pet_food_008",
+      "brand": "卫仕 Nourse",
+      "product_title": "卫仕猫粮全价全阶段通用粮",
+      "review_count_label": "20万+评价",
+      "popularity_score": 97,
+      "tags": ["京东猫粮排行榜", "全阶段", "品牌认知"]
+    },
+    {
+      "rank": 3,
+      "product_id": "pet_food_007",
+      "brand": "凯锐思",
+      "product_title": "凯锐思猫粮全价成猫幼猫通用粮",
+      "review_count_label": "100万+评价",
+      "popularity_score": 98,
+      "tags": ["京东猫粮排行榜", "评价量高", "价格友好"]
+    },
+    {
+      "rank": 4,
+      "product_id": "pet_food_006",
+      "brand": "京东京造",
+      "product_title": "京东京造全价猫粮鲜肉配方",
+      "review_count_label": "50万+评价",
+      "popularity_score": 94,
+      "tags": ["京东猫粮排行榜", "京东自有品牌", "价格友好"]
+    },
+    {
+      "rank": 6,
+      "product_id": "pet_food_003",
+      "brand": "网易严选",
+      "product_title": "网易严选全价冻干双拼猫粮",
+      "review_count_label": "20万+评价",
+      "popularity_score": 96,
+      "tags": ["京东猫粮排行榜", "冻干双拼", "品牌认知"]
+    },
+    {
+      "rank": 9,
+      "product_id": "pet_food_001",
+      "brand": "麦富迪 MYFOODIE",
+      "product_title": "麦富迪三文鱼冻干双拼全价猫粮",
+      "review_count_label": "10万+评价",
+      "popularity_score": 95,
+      "tags": ["京东猫粮排行榜", "冻干双拼", "多猫家庭"]
+    }
+  ],
+  "unmatched_candidates": [
+    {
+      "rank": 5,
+      "brand": "佰萃粮",
+      "product_title": "佰萃粮 N70 高蛋白冻干全价猫粮",
+      "review_count_label": "10万+评价",
+      "reason_not_imported": "本地商品库暂未建立该 SKU，需要人工补齐价格、规格、配方和风险字段后再启用。"
+    },
+    {
+      "rank": 7,
+      "brand": "网易天成",
+      "product_title": "网易天成全价猫粮鸡肉配方",
+      "review_count_label": "10万+评价",
+      "reason_not_imported": "品牌和 SKU 与现有网易严选样本不同，暂作为候选池扩展项。"
+    },
+    {
+      "rank": 8,
+      "brand": "网易严选",
+      "product_title": "网易严选全价冻干双拼猫粮其他规格",
+      "review_count_label": "10万+评价",
+      "reason_not_imported": "同品牌近似 SKU，避免重复污染推荐池。"
+    },
+    {
+      "rank": 10,
+      "brand": "网易严选",
+      "product_title": "网易严选全价猫粮其他规格",
+      "review_count_label": "10万+评价",
+      "reason_not_imported": "同品牌近似 SKU，避免重复污染推荐池。"
+    }
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "domain": "pet_food",
+  "display_name": "宠物食品",
+  "query_keywords": ["猫粮", "猫", "主子", "宠物粮", "主粮", "冻干", "软便", "挑食"],
+  "decision_factors": [
+    "life_stage",
+    "digestive_sensitivity",
+    "palatability",
+    "protein_level",
+    "ingredient_risk",
+    "budget"
+  ],
+  "sub_scenarios": [
+    {
+      "id": "kitten_growth",
+      "name": "幼猫成长",
+      "keywords": ["幼猫", "奶猫", "奶糕", "断奶", "成长", "发育", "高品质配方"],
+      "focus_dimensions": ["pet_age_stage", "digestive_issue", "priority", "budget_range", "response_tone"],
+      "ranking_bias": ["life_stage", "digestive_support", "ingredient_quality"],
+      "description": "优先判断月龄、断奶阶段、消化能力和是否需要幼猫/奶糕配方。"
+    },
+    {
+      "id": "adult_daily",
+      "name": "成猫日常",
+      "keywords": ["成猫", "成年猫", "日常", "普通", "主粮", "长期吃"],
+      "focus_dimensions": ["priority", "budget_range", "digestive_issue", "picky_eater", "response_tone"],
+      "ranking_bias": ["suitability", "budget", "palatability"],
+      "description": "平衡日常适配、预算、适口性和换粮风险。"
+    },
+    {
+      "id": "digestive_sensitive",
+      "name": "肠胃敏感",
+      "keywords": ["软便", "呕吐", "肠胃", "玻璃胃", "便臭", "消化"],
+      "focus_dimensions": ["digestive_issue", "pet_age_stage", "priority", "budget_range", "response_tone"],
+      "ranking_bias": ["digestive_support", "safety"],
+      "description": "优先排除高脂、高刺激和不适合突然换粮的选择。"
+    },
+    {
+      "id": "coat_tear_stain",
+      "name": "美毛泪痕",
+      "keywords": ["美毛", "毛发", "泪痕", "去泪痕", "黑下巴", "鱼油"],
+      "focus_dimensions": ["priority", "pet_age_stage", "digestive_issue", "budget_range", "response_tone"],
+      "ranking_bias": ["functional_claim", "ingredient_risk"],
+      "description": "关注美毛、泪痕相关卖点，但避免把营销词当作确定效果。"
+    },
+    {
+      "id": "multi_cat_value",
+      "name": "多猫家庭性价比",
+      "keywords": ["多猫", "囤货", "大包装", "便宜", "性价比", "质价比", "预算"],
+      "focus_dimensions": ["budget_range", "priority", "pet_age_stage", "picky_eater", "response_tone"],
+      "ranking_bias": ["unit_price", "popularity", "budget"],
+      "description": "优先比较单价、包装规格、热度和长期喂养成本。"
+    },
+    {
+      "id": "picky_palatable",
+      "name": "挑食适口性",
+      "keywords": ["挑食", "不爱吃", "适口性", "冻干", "爱吃", "拌粮", "嘴刁", "嘴很刁", "香一点"],
+      "focus_dimensions": ["picky_eater", "priority", "digestive_issue", "budget_range", "response_tone"],
+      "ranking_bias": ["palatability", "risk"],
+      "description": "优先判断适口性和肠胃风险之间的取舍。"
+    }
+  ],
+  "question_dimensions": [
+    {
+      "id": "pet_age_stage",
+      "label": "你的猫处于哪个阶段？",
+      "reason": "幼猫、成猫和老年猫需要的营养比例不同。",
+      "answer_type": "single_choice",
+      "options": ["幼猫", "成猫", "老年猫"]
+    },
+    {
+      "id": "digestive_issue",
+      "label": "平时是否容易软便、呕吐或肠胃敏感？",
+      "reason": "候选商品里有肠胃友好型和高蛋白型，需要区分适合度。",
+      "answer_type": "single_choice",
+      "options": ["经常", "偶尔", "基本不会"]
+    },
+    {
+      "id": "picky_eater",
+      "label": "你的猫挑食吗？",
+      "reason": "部分商品适口性更强，但价格和热量也可能更高。",
+      "answer_type": "single_choice",
+      "options": ["很挑食", "有一点", "不挑食"]
+    },
+    {
+      "id": "budget_range",
+      "label": "这次购买更偏向哪种预算策略？",
+      "reason": "猫粮有大包装和小包装差异，系统会按参考元/kg和总价共同判断，不只看页面总价。",
+      "answer_type": "single_choice",
+      "options": ["预算优先", "预算不敏感"]
+    },
+    {
+      "id": "priority",
+      "label": "你最看重哪一点？",
+      "reason": "推荐排序会根据你的主要目标调整权重。",
+      "answer_type": "single_choice",
+      "options": ["肠胃稳定", "美毛泪痕", "猫爱吃", "成分更好", "性价比"]
+    },
+    {
+      "id": "response_tone",
+      "label": "你希望我用哪种风格解释？",
+      "reason": "这个问题不影响商品安全判断，只影响最后的表达方式和情绪价值。",
+      "answer_type": "single_choice",
+      "options": ["温柔可爱", "直接理性", "专业详细", "轻松鼓励"]
+    }
+  ],
+  "risk_rules": [
+    {
+      "id": "transition_needed",
+      "severity": "low",
+      "message": "换粮需要 7-10 天逐步过渡，避免突然换粮导致肠胃不适。"
+    },
+    {
+      "id": "medical_symptom_guardrail",
+      "severity": "high",
+      "message": "如果出现持续呕吐、腹泻、血便或精神异常，建议先咨询兽医，不应只依赖商品推荐。"
+    },
+    {
+      "id": "high_fat_sensitive_stomach",
+      "severity": "medium",
+      "message": "肠胃敏感时需要谨慎选择高脂或高冻干比例产品。"
+    }
+  ],
+  "ranking_weights": {
+    "suitability": 0.35,
+    "safety": 0.25,
+    "budget_match": 0.2,
+    "popularity": 0.1,
+    "preference_match": 0.1
+  }
+}

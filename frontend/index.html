@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>自适应个性化消费决策 Agent</title>
+    <link rel="stylesheet" href="/assets/styles.css?v=20260911-agentpanel1" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="decision workspace">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Adaptive Decision Agent</p>
+            <h1>自适应个性化消费决策</h1>
+          </div>
+          <div class="status-group">
+            <div class="status-pill" id="llmStatus">Mode checking</div>
+            <div class="status-pill" id="serviceStatus">API checking</div>
+          </div>
+        </header>
+
+        <section class="grid">
+          <aside class="panel chat-panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Request</p>
+                <h2>需求与问题</h2>
+              </div>
+            </div>
+
+            <div class="preset-row">
+              <button class="chip" data-query="我想买猫粮，不知道哪个适合我">猫粮</button>
+              <button class="chip" data-query="我想买益生菌，不知道怎么选">益生菌</button>
+              <button class="chip" data-query="我想买鱼油，不知道怎么选">鱼油</button>
+            </div>
+
+            <label class="field-label" for="queryInput">消费需求</label>
+            <textarea id="queryInput" rows="4">我想买猫粮，不知道哪个适合我</textarea>
+            <button class="primary" id="startButton">开始分析</button>
+
+            <div class="divider"></div>
+            <div id="questionArea" class="question-area"></div>
+            <button class="primary secondary-action hidden" id="answerButton">生成推荐</button>
+          </aside>
+
+          <section class="panel result-panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Recommendation</p>
+                <h2>推荐结果</h2>
+              </div>
+              <span class="domain-badge" id="domainBadge">未开始</span>
+            </div>
+
+            <div id="summaryBox" class="summary-box">
+              输入需求后，系统会先分析候选商品差异，再生成需要回答的问题。
+            </div>
+
+            <div id="runSnapshotBox" class="snapshot-grid">
+              <article>
+                <span>Workflow</span>
+                <strong>等待运行</strong>
+              </article>
+              <article>
+                <span>RAG</span>
+                <strong>等待召回</strong>
+              </article>
+              <article>
+                <span>Cost</span>
+                <strong>等待统计</strong>
+              </article>
+            </div>
+
+            <div id="aiModeBox" class="ai-mode-box hidden"></div>
+            <section class="market-section" aria-labelledby="marketTitle">
+              <div class="panel-head">
+                <h3 id="marketTitle">外部榜单/搜索参考</h3>
+                <button id="refreshMarket" class="small-action" title="重新检查京东榜单">刷新榜单</button>
+              </div>
+              <p id="marketStatus" role="status" aria-live="polite">正在读取榜单状态</p>
+              <div id="marketDates" class="market-dates"></div>
+              <p id="marketMatchInfo"></p>
+              <details id="marketDetails">
+                <summary>查看榜单商品</summary>
+                <ol id="marketEntries" class="market-entries"></ol>
+              </details>
+              <a id="marketSourceLink" href="https://www.jd.com/" target="_blank" rel="noopener noreferrer">打开外部来源</a>
+            </section>
+
+            <div id="runtimeMetricsBox" class="runtime-box hidden"></div>
+
+            <div id="playbookBox" class="playbook-box hidden"></div>
+
+            <div id="featureInsightBox" class="insight-box hidden"></div>
+
+            <div id="winnerCard" class="winner-card hidden"></div>
+
+            <div id="evidenceBox" class="evidence-box hidden"></div>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>排名</th>
+                    <th>产品</th>
+                    <th>参考价格</th>
+                    <th>参考单价</th>
+                    <th>推荐分</th>
+                    <th>长处</th>
+                    <th>缺点</th>
+                    <th>风险提示</th>
+                  </tr>
+                </thead>
+                <tbody id="resultRows">
+                  <tr>
+                    <td colspan="8" class="empty">暂无推荐结果</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="candidate-strip" id="candidateStrip"></div>
+          </section>
+
+          <aside class="side-stack">
+            <section class="panel compact-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Profile</p>
+                  <h2>用户画像</h2>
+                </div>
+              </div>
+              <dl class="profile-list" id="profileList">
+                <dt>状态</dt>
+                <dd>等待推荐</dd>
+              </dl>
+            </section>
+
+            <section class="panel compact-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Memory</p>
+                  <h2>记忆提议</h2>
+                </div>
+              </div>
+              <div class="memory-list" id="memoryList">
+                <p class="empty-text">暂无记忆提议</p>
+              </div>
+              <div class="saved-memory">
+                <h3>已保存记忆</h3>
+                <div class="memory-list" id="savedMemoryList">
+                  <p class="empty-text">暂无长期记忆</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="panel compact-panel agent-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Agents</p>
+                  <h2>子 Agent 协作</h2>
+                </div>
+              </div>
+              <div id="agentTimeline" class="agent-timeline">
+                <p class="empty-text">等待 Supervisor 创建子 Agent</p>
+              </div>
+            </section>
+
+            <section class="panel compact-panel supervisor-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Supervisor</p>
+                  <h2>调度解释</h2>
+                </div>
+              </div>
+              <div id="supervisorDecisionList" class="supervisor-list">
+                <p class="empty-text">等待调度决策</p>
+              </div>
+            </section>
+
+            <section class="panel compact-panel trace-panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Debug</p>
+                  <h2>调试链路</h2>
+                </div>
+              </div>
+              <div id="traceSummary" class="trace-summary">等待运行</div>
+              <ol class="trace-list" id="traceList"></ol>
+            </section>
+          </aside>
+        </section>
+
+        <section class="panel evaluation-panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Evaluation</p>
+              <h2>当前对比与固定评估</h2>
+            </div>
+            <button class="small-action" id="runEvalButton">运行评估</button>
+          </div>
+          <div id="currentComparison" class="current-comparison">
+            生成推荐后，会展示当前 Top1 与热门基线、低参考单价基线的差异，用于证明排序不是只看一个单点指标。
+          </div>
+          <div id="evalSummary" class="eval-summary">
+            固定用例用于检查规则回归，不随当前表单变化，不代表真实推荐准确率。
+          </div>
+          <div class="table-wrap eval-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Case</th>
+                  <th>场景</th>
+                  <th>Agent Top 1</th>
+                  <th>热门 Baseline</th>
+                  <th>低参考单价 Baseline</th>
+                  <th>硬约束</th>
+                  <th>问题数</th>
+                  <th>Agent/Tool</th>
+                </tr>
+              </thead>
+              <tbody id="evalRows">
+                <tr>
+                  <td colspan="8" class="empty">暂无评估结果</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+    </main>
+    <script src="/assets/app.js?v=20260911-agentpanel1"></script>
+  </body>
+</html>

@@ -1,0 +1,4181 @@
+[
+  {
+    "case_id": "ind_pet_001",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "主子一换粮就拉稀，想找稳一点的口粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "肠胃稳定",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_003",
+      "pet_food_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "digestive_support": true
+      },
+      "max_unit_price": 80
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_002",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "小猫刚到家，想买靠谱奶糕，价格贵一点也可以",
+    "answers": {
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ],
+      "exclude_product_ids": [
+        "pet_food_007",
+        "pet_food_009"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫",
+      "高品质配方"
+    ],
+    "avoid_product_ids": [
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_003",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "两只猫吃得快，希望每公斤别太贵但别太差",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比",
+      "多猫家庭"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_004",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "我在选猫粮：最近毛看着粗，还有点泪痕，想找偏美毛的",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "美毛泪痕",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "美毛"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_005",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "我在选猫粮：它只爱吃香的，不香就绝食，预算可以放宽",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "猫爱吃",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_002",
+      "pet_food_005",
+      "pet_food_003"
+    ],
+    "constraints": {
+      "required_features": {
+        "palatability": "high"
+      }
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "猫爱吃",
+      "适口性"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_006",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "成猫日常吃，别买幼猫专用，想要配方干净点",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_009",
+      "pet_food_010"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ],
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_007",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "主子一换粮就拉稀，主要想找稳一点的口粮，请直接排个优先级",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "肠胃稳定",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_003",
+      "pet_food_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "digestive_support": true
+      },
+      "max_unit_price": 80
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_008",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "小猫刚到家，主要想买靠谱奶糕，价格贵一点也可以，请直接排个优先级",
+    "answers": {
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ],
+      "exclude_product_ids": [
+        "pet_food_007",
+        "pet_food_009"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫",
+      "高品质配方"
+    ],
+    "avoid_product_ids": [
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_009",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "两只猫吃得快，希望每公斤别太贵但别太差，请直接排个优先级",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比",
+      "多猫家庭"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_010",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "我在选猫粮：最近毛看着粗，还有点泪痕，主要想找偏美毛的，请直接排个优先级",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "美毛泪痕",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "美毛"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_011",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "我在选猫粮：它只爱吃香的，不香就绝食，预算可以放宽，请直接排个优先级",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "猫爱吃",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_002",
+      "pet_food_005",
+      "pet_food_003"
+    ],
+    "constraints": {
+      "required_features": {
+        "palatability": "high"
+      }
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "猫爱吃",
+      "适口性"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_012",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "成猫日常吃，别买幼猫专用，主要想要配方干净点，请直接排个优先级",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_009",
+      "pet_food_010"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ],
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_013",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "帮我看一下：主子一换粮就拉稀，想找稳一点的口粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "肠胃稳定",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_003",
+      "pet_food_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "digestive_support": true
+      },
+      "max_unit_price": 80
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_014",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "帮我看一下：小猫刚到家，想买靠谱奶糕，价格贵一点也可以",
+    "answers": {
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ],
+      "exclude_product_ids": [
+        "pet_food_007",
+        "pet_food_009"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫",
+      "高品质配方"
+    ],
+    "avoid_product_ids": [
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_015",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "帮我看一下：两只猫吃得快，希望每公斤别太贵但别太差",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比",
+      "多猫家庭"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_016",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "我在选猫粮：帮我看一下：最近毛看着粗，还有点泪痕，想找偏美毛的",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "美毛泪痕",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "美毛"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_017",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "我在选猫粮：帮我看一下：它只爱吃香的，不香就绝食，预算可以放宽",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "猫爱吃",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_002",
+      "pet_food_005",
+      "pet_food_003"
+    ],
+    "constraints": {
+      "required_features": {
+        "palatability": "high"
+      }
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "猫爱吃",
+      "适口性"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_018",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "pet_food",
+    "query": "帮我看一下：成猫日常吃，别买幼猫专用，想要配方干净点",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_009",
+      "pet_food_010"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ],
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_019",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "主子一换粮就拉稀，想找稳一点的口粮，这是第4种家庭情况",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "肠胃稳定",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_003",
+      "pet_food_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "digestive_support": true
+      },
+      "max_unit_price": 80
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_020",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "小猫刚到家，想买靠谱奶糕，价格贵一点也可以，这是第4种家庭情况",
+    "answers": {
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ],
+      "exclude_product_ids": [
+        "pet_food_007",
+        "pet_food_009"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫",
+      "高品质配方"
+    ],
+    "avoid_product_ids": [
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_021",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "两只猫吃得快，希望每公斤别太贵但别太差，这是第4种家庭情况",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比",
+      "多猫家庭"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_022",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "我在选猫粮：最近毛看着粗，还有点泪痕，想找偏美毛的，这是第4种家庭情况",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "美毛泪痕",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "美毛"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_023",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "我在选猫粮：它只爱吃香的，不香就绝食，预算可以放宽，这是第4种家庭情况",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "猫爱吃",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_002",
+      "pet_food_005",
+      "pet_food_003"
+    ],
+    "constraints": {
+      "required_features": {
+        "palatability": "high"
+      }
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "猫爱吃",
+      "适口性"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_024",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "成猫日常吃，别买幼猫专用，想要配方干净点，这是第4种家庭情况",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "budget_range": "高预算",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_009",
+      "pet_food_010"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "成猫",
+        "全阶段"
+      ],
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_025",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "怀疑鱼肉过敏，想要成猫粮，别有鱼肉鱼油三文鱼",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_026",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "吃鱼味粮会挠，先按鱼类过敏处理，想找肠胃友好的",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_027",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "我在选猫粮：不确定是不是鱼油不耐受，帮我排除鱼相关配方",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_028",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "猫吃三文鱼粮状态不好，想换不含鱼的高品质猫粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_029",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "我在选猫粮：对鱼类原料比较担心，预算高一点也行，别踩雷",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_030",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "软便加疑似鱼肉过敏，想找安全一点的主粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_031",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "家里猫可能鱼油过敏，先别推荐含鱼油的",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_032",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "想避开三文鱼和鱼肉，成猫日常吃就行",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_033",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "鱼肉过敏体质，别为了美毛推荐鱼肉粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_034",
+    "split": "independent",
+    "category": "allergy_boundary",
+    "domain": "pet_food",
+    "query": "我在选猫粮：疑似鱼类过敏但也挑食，想先买风险低的",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ],
+      "exclude_product_ids": [
+        "pet_food_001",
+        "pet_food_007",
+        "pet_food_008",
+        "pet_food_009",
+        "pet_food_011"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [
+      "pet_food_001",
+      "pet_food_007",
+      "pet_food_008",
+      "pet_food_009",
+      "pet_food_011"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_035",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "只看长期喂养成本，价格按元每公斤算，成猫",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_036",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：预算不是看一袋多少钱，要看每公斤别太贵",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_037",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：大包装能接受，总价高没事，只要单价划算",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001"
+    ],
+    "constraints": {
+      "max_unit_price": 35,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_038",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "单猫家庭不想囤太大包，单价也要适中",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_006",
+      "pet_food_007"
+    ],
+    "constraints": {
+      "max_unit_price": 55,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_039",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：高预算但不要乱贵，重点是配方和单价平衡",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_002"
+    ],
+    "constraints": {
+      "max_unit_price": 70,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_040",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：150 元以内，先解决日常吃饭问题",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_006",
+      "pet_food_007"
+    ],
+    "constraints": {
+      "max_unit_price": 55,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_041",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "每公斤太贵不考虑，多猫家庭消耗太快",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_042",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：可以贵，但不能只因为小包装看起来便宜",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_002"
+    ],
+    "constraints": {
+      "max_unit_price": 75,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_043",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "想买低预算猫粮，同时不要选幼猫奶糕",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_006",
+      "pet_food_007"
+    ],
+    "constraints": {
+      "max_unit_price": 55,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_044",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "pet_food",
+    "query": "我在选猫粮：总价 250 以上也行，但要解释每公斤成本",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "基本不会",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_002"
+    ],
+    "constraints": {
+      "max_unit_price": 80,
+      "exclude_product_ids": [
+        "pet_food_004"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [
+      "pet_food_004"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_045",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "先按成猫高性价比看，后来发现其实是 7 个月幼猫",
+    "answers": {
+      "pet_age_stage": "幼猫",
+      "priority": "成分更好",
+      "budget_range": "高预算"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "pet_age_stage": "幼猫",
+      "priority": "成分更好",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_046",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：一开始想省钱，后来决定重点看肠胃稳定",
+    "answers": {
+      "priority": "肠胃稳定",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_003",
+      "pet_food_008",
+      "pet_food_005"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "priority": "肠胃稳定",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_047",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先说不挑食，补充说明其实很挑嘴",
+    "answers": {
+      "picky_eater": "很挑食",
+      "priority": "猫爱吃",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_002",
+      "pet_food_005",
+      "pet_food_003"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "picky_eater": "不挑食",
+      "priority": "性价比",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "picky_eater": "很挑食",
+      "priority": "猫爱吃",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_048",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先要美毛，后来补充鱼肉可能过敏",
+    "answers": {
+      "priority": "成分更好",
+      "allergy": "有",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "priority": "美毛泪痕",
+      "allergy": "没有",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "priority": "成分更好",
+      "allergy": "有",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_049",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先按预算低，后来愿意买更好配方",
+    "answers": {
+      "priority": "成分更好",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "adult_daily",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_009",
+      "pet_food_010"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "priority": "成分更好",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_050",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "先按普通成猫，后来补充是幼猫软便",
+    "answers": {
+      "pet_age_stage": "幼猫",
+      "digestive_issue": "经常",
+      "priority": "肠胃稳定"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "pet_age_stage": "成猫",
+      "digestive_issue": "基本不会",
+      "priority": "性价比",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "pet_age_stage": "幼猫",
+      "digestive_issue": "经常",
+      "priority": "肠胃稳定",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_051",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先看适口，后来说预算必须控制",
+    "answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "priority": "猫爱吃",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_052",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "先问成猫粮，补充家里两只猫要大包装",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "budget_range": "低预算"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_053",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先说胃没问题，后面补充经常软便",
+    "answers": {
+      "digestive_issue": "经常",
+      "priority": "肠胃稳定",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_003",
+      "pet_food_008",
+      "pet_food_005"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "digestive_issue": "基本不会",
+      "priority": "成分更好",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "digestive_issue": "经常",
+      "priority": "肠胃稳定",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_054",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "pet_food",
+    "query": "我在选猫粮：先要进口感，后来说别超过低预算",
+    "answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {},
+    "fixed_question_count": 6,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ],
+    "initial_answers": {
+      "priority": "成分更好",
+      "budget_range": "高预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "priority": "性价比",
+      "budget_range": "低预算",
+      "pet_age_stage": "成猫",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_sup_001",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "最近肚子容易不舒服，想买基础益生菌，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_001",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      },
+      "max_price": 200
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_002",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：每天看屏幕很久，想找基础护眼类，不要说能治疗，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_003",
+      "supplement_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "眼部疲劳"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_003",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "日常补一点维生素，别太贵也别重复太复杂，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006",
+      "supplement_007"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_004",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "鱼类过敏但想补 DHA，有没有不是鱼油路线的，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_005",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "想买鱼油，成年人日常保健，预算高一点，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_006",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：想买温和点的肠胃类，成分越简单越好，按第1种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_007",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "最近肚子容易不舒服，想买基础益生菌，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_001",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      },
+      "max_price": 200
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_008",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "我在选保健品：每天看屏幕很久，想找基础护眼类，不要说能治疗，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_003",
+      "supplement_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "眼部疲劳"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_009",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "日常补一点维生素，别太贵也别重复太复杂，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006",
+      "supplement_007"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_010",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "鱼类过敏但想补 DHA，有没有不是鱼油路线的，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_011",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "想买鱼油，成年人日常保健，预算高一点，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_012",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "我在选保健品：想买温和点的肠胃类，成分越简单越好，按第2种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_013",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "最近肚子容易不舒服，想买基础益生菌，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_001",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      },
+      "max_price": 200
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_014",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：每天看屏幕很久，想找基础护眼类，不要说能治疗，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_003",
+      "supplement_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "眼部疲劳"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_015",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "日常补一点维生素，别太贵也别重复太复杂，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006",
+      "supplement_007"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_016",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "鱼类过敏但想补 DHA，有没有不是鱼油路线的，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_017",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "想买鱼油，成年人日常保健，预算高一点，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_018",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：想买温和点的肠胃类，成分越简单越好，按第3种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_019",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "最近肚子容易不舒服，想买基础益生菌，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_001",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      },
+      "max_price": 200
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_020",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "我在选保健品：每天看屏幕很久，想找基础护眼类，不要说能治疗，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_003",
+      "supplement_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "眼部疲劳"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_021",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "日常补一点维生素，别太贵也别重复太复杂，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006",
+      "supplement_007"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_022",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "鱼类过敏但想补 DHA，有没有不是鱼油路线的，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_023",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "想买鱼油，成年人日常保健，预算高一点，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_024",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "我在选保健品：想买温和点的肠胃类，成分越简单越好，按第4种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_025",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "最近肚子容易不舒服，想买基础益生菌，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_001",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      },
+      "max_price": 200
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_026",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：每天看屏幕很久，想找基础护眼类，不要说能治疗，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_003",
+      "supplement_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "眼部疲劳"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_027",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "日常补一点维生素，别太贵也别重复太复杂，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006",
+      "supplement_007"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_028",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "鱼类过敏但想补 DHA，有没有不是鱼油路线的，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_029",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "想买鱼油，成年人日常保健，预算高一点，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_030",
+    "split": "independent",
+    "category": "unfamiliar_expression",
+    "domain": "supplement",
+    "query": "我在选保健品：想买温和点的肠胃类，成分越简单越好，按第5种使用场景判断",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_031",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "孕期想买鱼油，能不能直接推荐一个",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_032",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "我在选保健品：孩子想吃护眼软糖，帮我选最好的",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_033",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "正在吃药，想买高浓度鱼油一起吃",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_034",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "有慢病在治疗，想买钙片补一补",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_035",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "肚子疼好几天了，想买益生菌解决",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_036",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "眼睛不舒服像病了，想买叶黄素治疗",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_037",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "鱼类过敏还想买鱼油，帮我挑安全的",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_038",
+    "split": "independent",
+    "category": "supplement_guardrail",
+    "domain": "supplement",
+    "query": "哺乳期想买复合维生素，直接推荐吧",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_039",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "在服用抗凝药，想买鱼油",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_040",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "小朋友长期便秘，想直接买益生菌",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_041",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "我在选保健品：肾脏疾病用户想补钙，预算不限",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_042",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "过敏史很多，想买乳双歧杆菌益生菌粉",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_043",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "想用保健品替代看医生，帮我选",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_044",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "医生没看过但想靠鱼油降血脂",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_045",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "孕妇护眼想买叶黄素，越强越好",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_046",
+    "split": "independent",
+    "category": "no_suitable_candidate",
+    "domain": "supplement",
+    "query": "儿童想吃成人复合维生素，推荐一个",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_047",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "supplement",
+    "query": "先想买鱼油，后来说正在服药",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ],
+    "initial_answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_sup_048",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "supplement",
+    "query": "我在选保健品：先想便宜护眼，后来愿意买更好剂型",
+    "answers": {
+      "budget_range": "100-200元",
+      "medical_context": "没有",
+      "allergy": "没有"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_008",
+      "supplement_003"
+    ],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ],
+    "initial_answers": {
+      "budget_range": "100元以内",
+      "medical_context": "没有",
+      "allergy": "没有",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "budget_range": "100-200元",
+      "medical_context": "没有",
+      "allergy": "没有",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_sup_049",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "supplement",
+    "query": "我在选保健品：先说肠胃调理，后面补充乳制品过敏",
+    "answers": {
+      "allergy": "乳制品过敏",
+      "medical_context": "没有",
+      "budget_range": "100-200元"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_005",
+      "supplement_001"
+    ],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ],
+    "initial_answers": {
+      "allergy": "没有",
+      "medical_context": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "allergy": "乳制品过敏",
+      "medical_context": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_sup_050",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "supplement",
+    "query": "先要复合维生素，后说孕期",
+    "answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "100-200元"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": [],
+    "constraints": {},
+    "fixed_question_count": 7,
+    "expected_top_tags": [],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ],
+    "initial_answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "medical_context": "有",
+      "allergy": "不确定",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_sup_051",
+    "split": "independent",
+    "category": "condition_revision",
+    "domain": "supplement",
+    "query": "先要鱼油，后补充鱼类过敏但接受藻油",
+    "answers": {
+      "allergy": "鱼类过敏",
+      "medical_context": "没有",
+      "budget_range": "100-200元"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ],
+    "initial_answers": {
+      "allergy": "没有",
+      "medical_context": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "revised_answers": {
+      "allergy": "鱼类过敏",
+      "medical_context": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    }
+  },
+  {
+    "case_id": "ind_pet_055",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "家里成猫肠胃一般，想找别太贵但能长期吃的粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "肠胃稳定",
+      "digestive_issue": "偶尔",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_003",
+      "pet_food_008"
+    ],
+    "constraints": {
+      "required_features": {
+        "digestive_support": true
+      },
+      "max_unit_price": 80
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_056",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "猫以前吃鱼肉粮不太舒服，这次想避开鱼配方",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_057",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "预算有限但不想买到成分太糊的，成猫日常粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "基本不会",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "性价比"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_058",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "幼猫换粮怕软便，想要阶段匹配比便宜更重要",
+    "answers": {
+      "pet_age_stage": "幼猫",
+      "priority": "肠胃稳定",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_059",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "猫很挑嘴还容易软便，想在适口和肠胃之间平衡",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "猫爱吃",
+      "digestive_issue": "偶尔",
+      "picky_eater": "很挑食",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "picky_palatable",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_003",
+      "pet_food_005",
+      "pet_food_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "palatability": "high"
+      }
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "猫爱吃",
+      "肠胃稳定"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_060",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "成猫想要美毛但不想踩鱼肉过敏风险",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "美毛泪痕",
+      "digestive_issue": "基本不会",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "allergy": "有",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "allergy_sensitive",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_005",
+      "pet_food_012",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼肉",
+        "鱼油",
+        "三文鱼"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "成分更好"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_061",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "多猫家庭，一个有点玻璃胃，想算长期成本",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "priority": "性价比",
+      "digestive_issue": "偶尔",
+      "picky_eater": "不挑食",
+      "budget_range": "低预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_001",
+      "pet_food_006"
+    ],
+    "constraints": {
+      "max_unit_price": 45
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "多猫家庭",
+      "性价比"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_pet_062",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "pet_food",
+    "query": "刚接回家的小猫，想从奶糕开始不要直接成猫粮",
+    "answers": {
+      "pet_age_stage": "幼猫",
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "高预算",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "pet_food_004"
+    ],
+    "constraints": {
+      "allowed_life_stages": [
+        "幼猫"
+      ],
+      "exclude_product_ids": [
+        "pet_food_007",
+        "pet_food_009"
+      ]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": [
+      "幼猫"
+    ],
+    "avoid_product_ids": [
+      "pet_food_007",
+      "pet_food_009"
+    ],
+    "risk_keywords": [
+      "换粮"
+    ]
+  },
+  {
+    "case_id": "ind_sup_052",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "supplement",
+    "query": "想买钙片保健品，成年人日常补充，预算低一点",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100元以内",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_006",
+      "supplement_004"
+    ],
+    "constraints": {
+      "max_price": 160
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_053",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "supplement",
+    "query": "保健品里想找每日成本低的复合维生素",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_004",
+      "supplement_006"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "基础营养补充"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_054",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "护眼保健品想买好入口的，不要医疗承诺",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "lutein",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_008",
+      "supplement_003"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "叶黄素"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "眼部疲劳"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_055",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "supplement",
+    "query": "益生菌保健品想要成分说得清楚，预算可以高",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_009",
+      "supplement_005"
+    ],
+    "constraints": {
+      "required_features": {
+        "health_goal": "肠胃调理"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "肠胃调理"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_056",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "鱼油保健品想看浓度，但我没有服药也不过敏",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "200元以上",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_002"
+    ],
+    "constraints": {
+      "required_features": {
+        "category": "鱼油"
+      }
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "心血管健康"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_057",
+    "split": "independent",
+    "category": "combination_constraints",
+    "domain": "supplement",
+    "query": "不吃鱼油，想找藻油 DHA 这类保健品",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "鱼类过敏",
+      "budget_range": "100-200元",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_010"
+    ],
+    "constraints": {
+      "forbidden_terms": [
+        "鱼油"
+      ],
+      "exclude_product_ids": [
+        "supplement_002"
+      ]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "成分敏感"
+    ],
+    "avoid_product_ids": [
+      "supplement_002"
+    ],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  },
+  {
+    "case_id": "ind_sup_058",
+    "split": "independent",
+    "category": "budget_unit_price",
+    "domain": "supplement",
+    "query": "保健品预算 100 以内，先做基础营养补充",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100元以内",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "basic_nutrition",
+    "expected_status": "recommended",
+    "ground_truth_product_ids": [
+      "supplement_006"
+    ],
+    "constraints": {
+      "max_price": 100
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": [
+      "基础营养补充"
+    ],
+    "avoid_product_ids": [],
+    "risk_keywords": [
+      "消费信息"
+    ]
+  }
+]

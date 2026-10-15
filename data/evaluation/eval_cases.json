@@ -1,0 +1,235 @@
+[
+  {
+    "case_id": "pet_kitten_quality",
+    "domain": "pet_food",
+    "query": "我是幼猫需要高品质配方的奶糕，不考虑性价比",
+    "answers": {
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "ground_truth_product_ids": ["pet_food_004"],
+    "constraints": {
+      "allowed_life_stages": ["幼猫"],
+      "exclude_product_ids": ["pet_food_007", "pet_food_009"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["幼猫", "成分更好"],
+    "avoid_product_ids": ["pet_food_007"],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.8, "personalization": 4.7, "explanation": 4.2},
+      "popularity": {"relevance": 3.4, "personalization": 2.8, "explanation": 3.1},
+      "value": {"relevance": 2.8, "personalization": 2.5, "explanation": 2.8}
+    }
+  },
+  {
+    "case_id": "pet_digestive_sensitive",
+    "domain": "pet_food",
+    "query": "我家猫软便玻璃胃，想找肠胃稳定的猫粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "picky_eater": "不挑食",
+      "budget_range": "预算优先",
+      "response_tone": "温柔可爱"
+    },
+    "expected_scenario": "digestive_sensitive",
+    "ground_truth_product_ids": ["pet_food_001", "pet_food_003", "pet_food_008"],
+    "constraints": {
+      "required_features": {"digestive_support": true},
+      "max_unit_price": 80,
+      "exclude_product_ids": ["pet_food_002"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["肠胃稳定", "肠胃友好"],
+    "avoid_product_ids": ["pet_food_002"],
+    "risk_keywords": ["换粮", "肠胃"],
+    "quality_scores": {
+      "agent": {"relevance": 4.6, "personalization": 4.5, "explanation": 4.1},
+      "popularity": {"relevance": 3.2, "personalization": 2.9, "explanation": 3.0},
+      "value": {"relevance": 3.6, "personalization": 3.1, "explanation": 3.2}
+    }
+  },
+  {
+    "case_id": "pet_multi_cat_value",
+    "domain": "pet_food",
+    "query": "多猫家庭想买大包装猫粮，主要看性价比",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "digestive_issue": "基本不会",
+      "picky_eater": "不挑食",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "multi_cat_value",
+    "ground_truth_product_ids": ["pet_food_001"],
+    "constraints": {
+      "max_unit_price": 40
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["性价比", "多猫家庭"],
+    "avoid_product_ids": ["pet_food_009"],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.7, "personalization": 4.6, "explanation": 4.0},
+      "popularity": {"relevance": 3.1, "personalization": 2.7, "explanation": 3.0},
+      "value": {"relevance": 4.2, "personalization": 3.4, "explanation": 3.3}
+    }
+  },
+  {
+    "case_id": "pet_coat_tear",
+    "domain": "pet_food",
+    "query": "我想找能美毛去泪痕的猫粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "digestive_issue": "偶尔",
+      "picky_eater": "有一点",
+      "budget_range": "预算优先",
+      "response_tone": "轻松鼓励"
+    },
+    "expected_scenario": "coat_tear_stain",
+    "ground_truth_product_ids": ["pet_food_001", "pet_food_007", "pet_food_009"],
+    "constraints": {
+      "allowed_life_stages": ["成猫", "全阶段"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["美毛泪痕", "美毛"],
+    "avoid_product_ids": [],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.3, "personalization": 4.2, "explanation": 4.0},
+      "popularity": {"relevance": 3.0, "personalization": 2.8, "explanation": 3.0},
+      "value": {"relevance": 3.8, "personalization": 3.1, "explanation": 3.1}
+    }
+  },
+  {
+    "case_id": "pet_kitten_budget_conflict",
+    "domain": "pet_food",
+    "query": "幼猫想买便宜一点但别买成猫粮",
+    "answers": {
+      "digestive_issue": "基本不会",
+      "picky_eater": "有一点",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "kitten_growth",
+    "ground_truth_product_ids": ["pet_food_004"],
+    "constraints": {
+      "allowed_life_stages": ["幼猫"],
+      "exclude_product_ids": ["pet_food_007", "pet_food_009"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["幼猫"],
+    "avoid_product_ids": ["pet_food_007", "pet_food_009"],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.6, "personalization": 4.4, "explanation": 4.0},
+      "popularity": {"relevance": 2.9, "personalization": 2.6, "explanation": 2.9},
+      "value": {"relevance": 2.7, "personalization": 2.5, "explanation": 2.8}
+    }
+  },
+  {
+    "case_id": "pet_stranger_expression_picky",
+    "domain": "pet_food",
+    "query": "主子嘴很刁，闻一闻就走，想找香一点的粮",
+    "answers": {
+      "pet_age_stage": "成猫",
+      "digestive_issue": "基本不会",
+      "budget_range": "预算不敏感",
+      "response_tone": "轻松鼓励"
+    },
+    "expected_scenario": "picky_palatable",
+    "ground_truth_product_ids": ["pet_food_002", "pet_food_005", "pet_food_003"],
+    "constraints": {
+      "required_features": {"palatability": "high"}
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["猫爱吃", "适口性"],
+    "avoid_product_ids": [],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.5, "personalization": 4.4, "explanation": 4.1},
+      "popularity": {"relevance": 4.0, "personalization": 3.3, "explanation": 3.3},
+      "value": {"relevance": 3.0, "personalization": 2.7, "explanation": 2.9}
+    }
+  },
+  {
+    "case_id": "pet_adult_reject_kitten_food",
+    "domain": "pet_food",
+    "query": "成年猫日常主粮，别推荐幼猫奶糕",
+    "answers": {
+      "priority": "成分更好",
+      "digestive_issue": "偶尔",
+      "picky_eater": "不挑食",
+      "budget_range": "预算不敏感",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "adult_daily",
+    "ground_truth_product_ids": ["pet_food_005", "pet_food_009", "pet_food_010"],
+    "constraints": {
+      "allowed_life_stages": ["成猫", "全阶段"],
+      "exclude_product_ids": ["pet_food_004"]
+    },
+    "fixed_question_count": 6,
+    "expected_top_tags": ["成分更好", "成猫"],
+    "avoid_product_ids": ["pet_food_004"],
+    "risk_keywords": ["换粮"],
+    "quality_scores": {
+      "agent": {"relevance": 4.4, "personalization": 4.3, "explanation": 4.0},
+      "popularity": {"relevance": 4.1, "personalization": 3.4, "explanation": 3.2},
+      "value": {"relevance": 3.1, "personalization": 2.8, "explanation": 2.9}
+    }
+  },
+  {
+    "case_id": "supplement_probiotics_basic",
+    "domain": "supplement",
+    "query": "我想买益生菌，不知道怎么选",
+    "answers": {
+      "medical_context": "没有",
+      "allergy": "没有",
+      "budget_range": "100-200元",
+      "explanation_level": "表格对比",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "probiotics",
+    "ground_truth_product_ids": ["supplement_001", "supplement_005"],
+    "constraints": {
+      "max_price": 200,
+      "required_features": {"health_goal": "肠胃调理"},
+      "exclude_product_ids": ["supplement_002"]
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": ["肠胃调理"],
+    "avoid_product_ids": ["supplement_002"],
+    "risk_keywords": ["消费信息"],
+    "quality_scores": {
+      "agent": {"relevance": 4.5, "personalization": 4.2, "explanation": 4.1},
+      "popularity": {"relevance": 3.4, "personalization": 2.9, "explanation": 3.1},
+      "value": {"relevance": 3.0, "personalization": 2.8, "explanation": 2.9}
+    }
+  },
+  {
+    "case_id": "supplement_fish_oil_risk",
+    "domain": "supplement",
+    "query": "我想买鱼油，正在服药而且不确定有没有鱼类过敏",
+    "answers": {
+      "budget_range": "200元以上",
+      "explanation_level": "专业详细",
+      "response_tone": "直接理性"
+    },
+    "expected_scenario": "fish_oil",
+    "expected_status": "no_suitable_candidate",
+    "ground_truth_product_ids": ["supplement_002"],
+    "constraints": {
+      "required_features": {"category": "鱼油"}
+    },
+    "fixed_question_count": 7,
+    "expected_top_tags": ["心血管健康"],
+    "avoid_product_ids": [],
+    "risk_keywords": ["咨询专业人士", "过敏"],
+    "quality_scores": {
+      "agent": {"relevance": 4.4, "personalization": 4.1, "explanation": 4.6},
+      "popularity": {"relevance": 4.0, "personalization": 3.0, "explanation": 3.2},
+      "value": {"relevance": 3.0, "personalization": 2.6, "explanation": 2.8}
+    }
+  }
+]

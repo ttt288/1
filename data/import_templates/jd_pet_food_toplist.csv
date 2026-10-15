@@ -1,0 +1,7 @@
+source_name,source_url,observed_at,rank,brand,product_title,review_count_label,price,spec,life_stage,protein_level,palatability,digestive_support,main_ingredients,tags,data_quality,import_status,notes
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,1,鲜朗,鲜朗猫粮成猫幼猫通用高蛋白全价主粮,50万+评价,,,"全阶段",high,high,true,"鲜鸡肉;禽肉;低温烘焙","京东猫粮排行榜;高蛋白;热度高",ranking_signal_price_unverified,matched_existing,"价格和规格需打开商品页人工校验后再导入"
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,2,卫仕 Nourse,卫仕猫粮全价全阶段通用粮,20万+评价,,,"全阶段",medium,medium,true,"鸡肉;鱼油;益生元","京东猫粮排行榜;全阶段;品牌认知",ranking_signal_price_unverified,matched_existing,"价格和规格需打开商品页人工校验后再导入"
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,3,凯锐思,凯锐思猫粮全价成猫幼猫通用粮,100万+评价,,,"全阶段",medium,medium,false,"鱼肉;鸡肉粉;牛磺酸","京东猫粮排行榜;评价量高;价格友好",ranking_signal_price_unverified,matched_existing,"价格和规格需打开商品页人工校验后再导入"
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,4,京东京造,京东京造全价猫粮鲜肉配方,50万+评价,,,"全阶段",medium,medium,true,"鲜鸡肉;益生菌;果蔬","京东猫粮排行榜;京东自有品牌;价格友好",ranking_signal_price_unverified,matched_existing,"价格和规格需打开商品页人工校验后再导入"
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,5,佰萃粮,佰萃粮 N70 高蛋白冻干全价猫粮,10万+评价,,,,,,,"京东猫粮排行榜;高蛋白",ranking_signal_price_unverified,pending_enrichment,"需要补齐价格、规格、配方、适用阶段、风险标签"
+京东猫粮排行榜整理,https://www.jd.com/phb/key_699402c85b220b9a9f13.html,2026-09-07,6,网易严选,网易严选全价冻干双拼猫粮,20万+评价,,,"全阶段",medium,high,true,"鲜肉;冻干;益生菌","京东猫粮排行榜;冻干双拼;品牌认知",ranking_signal_price_unverified,matched_existing,"价格和规格需打开商品页人工校验后再导入"

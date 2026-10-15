@@ -1,0 +1,47 @@
+[
+  {
+    "id": "jd_dynamic_phb_key_6994d0ef36b64af0338c_html",
+    "name": "京东狗粮公开排行榜",
+    "domain": "general",
+    "scenario": null,
+    "keywords": [
+      "狗粮"
+    ],
+    "url": "https://www.jd.com/phb/key_6994d0ef36b64af0338c.html",
+    "search_keyword": "狗粮",
+    "heading_keywords": [
+      "京东",
+      "排行榜"
+    ]
+  },
+  {
+    "id": "jd_dynamic_phb_key_1316b2b9e33766388db7_html",
+    "name": "京东粉底液公开排行榜",
+    "domain": "general",
+    "scenario": "general_consumer_decision",
+    "keywords": [
+      "粉底液"
+    ],
+    "url": "https://www.jd.com/phb/key_1316b2b9e33766388db7.html",
+    "search_keyword": "粉底液",
+    "heading_keywords": [
+      "京东",
+      "排行榜"
+    ]
+  },
+  {
+    "id": "jd_dynamic_phb_key_670ae38c50d66374e13_html",
+    "name": "京东电脑公开排行榜",
+    "domain": "general",
+    "scenario": "general_consumer_decision",
+    "keywords": [
+      "电脑"
+    ],
+    "url": "https://www.jd.com/phb/key_670ae38c50d66374e13.html",
+    "search_keyword": "电脑",
+    "heading_keywords": [
+      "京东",
+      "排行榜"
+    ]
+  }
+]

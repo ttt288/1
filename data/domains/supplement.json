@@ -1,0 +1,116 @@
+{
+  "domain": "supplement",
+  "display_name": "保健品",
+  "query_keywords": ["保健品", "益生菌", "鱼油", "维生素", "叶黄素", "钙片", "补剂"],
+  "decision_factors": [
+    "health_goal",
+    "ingredient_match",
+    "dosage",
+    "safety",
+    "budget",
+    "brand_trust"
+  ],
+  "sub_scenarios": [
+    {
+      "id": "probiotics",
+      "name": "益生菌/益生元",
+      "keywords": ["益生菌", "益生元", "肠胃", "菌株", "便秘", "腹泻"],
+      "focus_dimensions": ["health_goal", "medical_context", "allergy", "budget_range", "response_tone"],
+      "ranking_bias": ["goal_match", "allergy", "ingredient_quality"],
+      "description": "优先判断肠胃目标、过敏和是否存在需要医生判断的情况。"
+    },
+    {
+      "id": "fish_oil",
+      "name": "鱼油/Omega-3",
+      "keywords": ["鱼油", "omega", "dha", "epa", "心血管", "血脂"],
+      "focus_dimensions": ["medical_context", "allergy", "health_goal", "budget_range", "response_tone"],
+      "ranking_bias": ["safety", "ingredient_quality", "allergy"],
+      "description": "优先判断用药、慢病和鱼类过敏风险。"
+    },
+    {
+      "id": "lutein",
+      "name": "叶黄素/护眼",
+      "keywords": ["叶黄素", "护眼", "眼睛", "眼疲劳", "蓝光"],
+      "focus_dimensions": ["health_goal", "medical_context", "budget_range", "response_tone"],
+      "ranking_bias": ["goal_match", "budget"],
+      "description": "关注眼疲劳消费场景，但不替代眼部疾病诊疗。"
+    },
+    {
+      "id": "multivitamin",
+      "name": "复合维生素",
+      "keywords": ["维生素", "复合", "基础营养", "熬夜", "饮食不规律"],
+      "focus_dimensions": ["health_goal", "medical_context", "budget_range", "response_tone"],
+      "ranking_bias": ["goal_match", "budget", "safety"],
+      "description": "优先判断是否已有重复补充和是否真的有基础补充需求。"
+    },
+    {
+      "id": "calcium_vitamin_d",
+      "name": "钙/维生素D",
+      "keywords": ["钙", "钙片", "维生素d", "骨骼", "补钙"],
+      "focus_dimensions": ["medical_context", "health_goal", "budget_range", "response_tone"],
+      "ranking_bias": ["safety", "dosage"],
+      "description": "关注重复补充和特殊疾病风险。"
+    }
+  ],
+  "question_dimensions": [
+    {
+      "id": "health_goal",
+      "label": "你主要想关注哪类需求？",
+      "reason": "不同保健品的核心成分和适用场景差异很大。",
+      "answer_type": "single_choice",
+      "options": ["肠胃调理", "心血管健康", "眼部疲劳", "基础营养补充"]
+    },
+    {
+      "id": "medical_context",
+      "label": "是否存在孕期、慢性病、正在服药或给儿童使用的情况？",
+      "reason": "这些情况会影响安全边界，系统不能直接做强推荐。",
+      "answer_type": "single_choice",
+      "options": ["有", "没有", "不确定"]
+    },
+    {
+      "id": "allergy",
+      "label": "是否有乳制品、鱼类、麸质或其他成分过敏？",
+      "reason": "候选商品中可能含有过敏相关成分。",
+      "answer_type": "single_choice",
+      "options": ["有", "没有", "不确定"]
+    },
+    {
+      "id": "budget_range",
+      "label": "这次购买更偏向哪种预算策略？",
+      "reason": "价格常受规格、促销和渠道影响，系统只区分预算优先还是预算不敏感，不把参考价当实时价格。",
+      "answer_type": "single_choice",
+      "options": ["预算优先", "预算不敏感"]
+    },
+    {
+      "id": "response_tone",
+      "label": "你希望我用哪种风格解释？",
+      "reason": "这个问题不影响安全边界，只影响最后的表达方式和情绪价值。",
+      "answer_type": "single_choice",
+      "options": ["温柔可爱", "直接理性", "专业详细", "轻松鼓励"]
+    }
+  ],
+  "risk_rules": [
+    {
+      "id": "no_medical_diagnosis",
+      "severity": "high",
+      "message": "系统只做消费信息整理，不做疾病诊断、治疗承诺或替代医生建议。"
+    },
+    {
+      "id": "medication_conflict_warning",
+      "severity": "high",
+      "message": "正在服药、孕期、慢性病或儿童使用场景需要先咨询专业人士。"
+    },
+    {
+      "id": "allergy_warning",
+      "severity": "medium",
+      "message": "存在过敏史时，需要优先排除含相关过敏成分的产品。"
+    }
+  ],
+  "ranking_weights": {
+    "goal_match": 0.3,
+    "safety": 0.3,
+    "ingredient_quality": 0.15,
+    "budget_match": 0.15,
+    "preference_match": 0.1
+  }
+}
