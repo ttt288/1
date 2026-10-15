@@ -297,9 +297,21 @@ function setLoading(button, loading, label) {
 
 function renderQuestions(questions, inferredAnswers = {}) {
   els.questionArea.innerHTML = "";
-  const visibleQuestions = questions.filter((question) => inferredAnswers[question.id] === undefined);
+  const hasValidInferredAnswer = (question) => {
+    const value = inferredAnswers[question.id];
+    if (value === null || value === undefined) return false;
+    if (typeof value === "string" && ["", "null", "none", "undefined", "unknown", "未知", "未提及"].includes(value.trim().toLowerCase())) {
+      return false;
+    }
+    if (Array.isArray(value)) {
+      return value.length > 0 && (!question.options?.length || value.every((item) => question.options.includes(item)));
+    }
+    if (question.options?.length && !question.options.includes(value)) return false;
+    return true;
+  };
+  const visibleQuestions = questions.filter((question) => !hasValidInferredAnswer(question));
   const inferredEntries = questions
-    .filter((question) => inferredAnswers[question.id] !== undefined)
+    .filter((question) => hasValidInferredAnswer(question))
     .map((question) => [question.label, inferredAnswers[question.id]]);
 
   if (inferredEntries.length) {

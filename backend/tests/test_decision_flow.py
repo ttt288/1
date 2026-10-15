@@ -5,15 +5,44 @@ from datetime import UTC, datetime, timedelta
 from app.core.config import get_settings
 from app.agents.llm_adapter import LLMAdapter
 from app.memory import MemoryService
-from app.schemas.ai import AIDynamicQuestionPlan, AIResponseSummary
+from app.schemas.ai import AIDynamicQuestionPlan, AIQueryUnderstanding, AIResponseSummary
 from app.schemas import MemoryItem, ProductOffer
 from app.services.decision_service import DecisionService
+from app.services.query_understanding_service import QueryUnderstandingService
 from app.services.ranking_service import RankingService
 from app.schemas import RiskResult, UserProfile
 
 
 def rule_settings():
     return get_settings().model_copy(update={"llm_enabled": False, "openai_api_key": None})
+
+
+def test_query_understanding_discards_null_and_invalid_question_answers() -> None:
+    class NullAnswerLLM:
+        enabled = True
+        settings = types.SimpleNamespace(llm_query_understanding_enabled=True)
+
+        def sdk_available(self):
+            return True
+
+        def generate_json(self, **kwargs):
+            return AIQueryUnderstanding.model_validate(
+                {
+                    "inferred_answers": {
+                        "priority": None,
+                        "pet_age_stage": "null",
+                        "budget_range": "未在选项中的预算",
+                    }
+                }
+            )
+
+    service = QueryUnderstandingService(NullAnswerLLM())
+    answers = service.infer_answers("pet_food", "我想买猫粮，不知道哪个适合我", None)
+    assert answers == {"budget_range": "未在选项中的预算"}
+
+    started = DecisionService(rule_settings()).start("我想买猫粮，不知道哪个适合我", "demo_user")
+    normalized = service.normalize_answers(answers, started.questions)
+    assert normalized == {}
 
 
 def test_pet_food_decision_flow() -> None:

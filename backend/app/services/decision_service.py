@@ -194,7 +194,10 @@ class DecisionService:
         products = loop_state.get("products", [])
         feature_analysis = loop_state["feature_analysis"]
         questions = loop_state["questions"]
-        inferred_answers = loop_state["inferred_answers"]
+        inferred_answers = self.query_understanding_service.normalize_answers(
+            loop_state["inferred_answers"],
+            questions,
+        )
 
         session_state = {
             "query": query,

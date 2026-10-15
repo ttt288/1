@@ -4,6 +4,9 @@ from app.agents import LLMAdapter
 from app.schemas.ai import AIQueryUnderstanding
 
 
+NULL_LIKE_VALUES = {"", "null", "none", "undefined", "unknown", "未知", "未提及"}
+
+
 class QueryUnderstandingService:
     """Low-cost query understanding before LLM extraction is added."""
 
@@ -13,7 +16,39 @@ class QueryUnderstandingService:
     def infer_answers(self, domain: str, query: str, scenario: str | None) -> dict[str, Any]:
         rule_answers = self._infer_answers_by_rules(domain, query, scenario)
         llm_answers = self._infer_answers_by_llm(domain, query, scenario, rule_answers)
-        return {**llm_answers, **rule_answers}
+        return self.normalize_answers({**llm_answers, **rule_answers})
+
+    def normalize_answers(self, answers: dict[str, Any], questions: list[Any] | None = None) -> dict[str, Any]:
+        """Keep only meaningful inferred values and validate answers for known questions."""
+        question_by_id = {question.id: question for question in questions or []}
+        normalized: dict[str, Any] = {}
+
+        for key, value in (answers or {}).items():
+            if not self._has_meaningful_value(value):
+                continue
+
+            question = question_by_id.get(key)
+            if question and question.options:
+                if isinstance(value, list):
+                    value = [item for item in value if item in question.options]
+                    if not value:
+                        continue
+                elif value not in question.options:
+                    continue
+
+            normalized[key] = value
+
+        return normalized
+
+    @staticmethod
+    def _has_meaningful_value(value: Any) -> bool:
+        if value is None:
+            return False
+        if isinstance(value, str):
+            return value.strip().lower() not in NULL_LIKE_VALUES
+        if isinstance(value, (list, tuple, set, dict)):
+            return bool(value)
+        return True
 
     def _infer_answers_by_rules(self, domain: str, query: str, scenario: str | None) -> dict[str, Any]:
         if domain == "pet_food":
