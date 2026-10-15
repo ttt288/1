@@ -99,3 +99,17 @@ curl -X POST http://localhost:8000/api/decision/start \
 - [项目设计文档](docs/project-design.md)
 - [开发执行计划](docs/development-plan.md)
 - [商品数据源策略](docs/data-source-strategy.md)
+
+## Render 部署
+
+仓库包含 `render.yaml`，可以通过 Render Blueprint 直接部署。
+
+1. 在 Render 新建 Blueprint 并连接此 GitHub 仓库。
+2. 部署时为 `OPENAI_API_KEY` 填写 Secret，不要把真实 Key 提交到仓库。
+3. Render 会执行以下启动命令：
+
+```bash
+PYTHONPATH=backend python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
+```
+
+免费实例闲置后会休眠，并且运行时写入的会话和记忆文件不会永久保存；源码内置的商品、知识与评测数据不受影响。
